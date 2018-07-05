@@ -4,7 +4,6 @@ import com.niezhiliang.ec.core.entity.KestoreParams;
 import com.niezhiliang.ec.core.entity.KestoreReturn;
 import com.niezhiliang.ec.core.keystore.service.KeyTools;
 import com.niezhiliang.ec.core.pattern.Behave;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
@@ -21,15 +20,13 @@ import java.util.HashMap;
 @Component
 public class GenerateKstoreStrategy implements Behave<KestoreParams,KestoreReturn> {
 
-    @Value("${ks.path}")
-    private String keyStorePath;
 
     @Override
     public KestoreReturn doSomeJob(KestoreParams kestoreParams) {
 
         try {
             //创建ks文件
-            FileOutputStream out = new FileOutputStream(keyStorePath+kestoreParams.getKeyStoreName());
+            FileOutputStream out = new FileOutputStream(kestoreParams.getKeyStoreName());
             KeyTools.newKeyStore(kestoreParams.getKeyStorePd())
                     .newKeyPair()
                     .keyLength(kestoreParams.getKeyLength())
@@ -49,7 +46,7 @@ public class GenerateKstoreStrategy implements Behave<KestoreParams,KestoreRetur
              * 查看证书的别名之类的
              */
             KeyStore ks = KeyStore.getInstance("JKS");
-            ks.load(new FileInputStream(keyStorePath+kestoreParams.getKeyStoreName()), "123456".toCharArray());
+            ks.load(new FileInputStream(kestoreParams.getKeyStoreName()), "123456".toCharArray());
             //ks.setCertificateEntry();
 
             Enumeration<String> tmp = ks.aliases();

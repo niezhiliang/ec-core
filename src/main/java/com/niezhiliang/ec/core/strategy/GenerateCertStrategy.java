@@ -6,7 +6,6 @@ import com.niezhiliang.ec.core.keystore.entity.Resource;
 import com.niezhiliang.ec.core.keystore.service.KeyStoreAdapter;
 import com.niezhiliang.ec.core.keystore.service.KeyTools;
 import com.niezhiliang.ec.core.pattern.Behave;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.naming.ldap.LdapName;
@@ -24,33 +23,29 @@ import java.util.List;
 @Component
 public class GenerateCertStrategy implements Behave<CertParams,KestoreReturn>{
 
-    @Value("${ks.path}")
-    private String keyStorePath;
-
     @Override
     public KestoreReturn doSomeJob(CertParams certParams) {
 
         try {
-        KeyStoreAdapter keyStoreAdapter = KeyTools.keyStoreFrom(Resource.from(keyStorePath+"demo.ks") , "123456");
+        KeyStoreAdapter keyStoreAdapter = KeyTools.keyStoreFrom(Resource.from(certParams.getKeyStorePath()) , certParams.getKeyStorePassword());
 
             keyStoreAdapter.newKeyPair()
-                    .keyLength(2048)
+                    .keyLength(certParams.getKeyLength())
                     .generateWithCertificate()
                     .withValidity(1 , ChronoUnit.YEARS)
                     .withDistinguishName()
-                    .commonName("苏雨先生")
-                    .state("杭州")
-                    .locality("浙江")
-                    .country("中国")
+                    .commonName(certParams.getRealName())
+                    .state(certParams.getCity())
+                    .locality(certParams.getProvince())
+                    .country(certParams.getCountry())
                     .build()
-                    .createInKeyStore("362202122362164266" , "123456");
-            FileOutputStream out = new FileOutputStream(keyStorePath+"demo.ks");
+                    .createInKeyStore(certParams.getAlias() , certParams.getCerPassword());
+            FileOutputStream out = new FileOutputStream(certParams.getKeyStorePath());
             keyStoreAdapter.writeTo(out);
             out.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
