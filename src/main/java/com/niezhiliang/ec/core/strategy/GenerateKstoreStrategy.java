@@ -5,6 +5,7 @@ import com.niezhiliang.ec.core.keystore.service.KeyTools;
 import com.niezhiliang.ec.core.pattern.Behave;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.math.BigInteger;
@@ -17,11 +18,11 @@ import java.util.Enumeration;
 import java.util.HashMap;
 
 @Component
-public class GenerateKstoreStrategy implements Behave<KestoreParams,KestoreReturn> {
+public class GenerateKstoreStrategy implements Behave<KestoreParams> {
 
 
     @Override
-    public KestoreReturn doSomeJob(KestoreParams kestoreParams) {
+    public void doSomeJob(KestoreParams kestoreParams) {
 
         try {
             //创建ks文件
@@ -65,8 +66,5 @@ public class GenerateKstoreStrategy implements Behave<KestoreParams,KestoreRetur
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return null;
     }
-
 }

@@ -3,8 +3,9 @@ server:
 
 
 ks:
-  path: ../../../../../../kestore/
-  pdf:  ../../../../../../tmp/test.pdf
-  img:  ../../../../../../tmp/pic.jpeg
+  path: /Users/huluwa110/Desktop/ec-core/src/test/kestore/
+  pdfdir: /Users/huluwa110/Desktop/ec-core/src/test/tmp/
+  pdf:  test.pdf
+  img:  /Users/huluwa110/Desktop/ec-core/src/test/tmp/pic.jpeg
 
 

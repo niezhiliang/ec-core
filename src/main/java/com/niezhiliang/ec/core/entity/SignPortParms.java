@@ -7,47 +7,58 @@ import java.math.BigDecimal;
  */
 public class SignPortParms {
 
-    /***左上****/
-    private BigDecimal leftTop;
+    /*****pdf签署页数******/
+    private int pageno;
 
-    /***左下****/
-    private BigDecimal leftButtom;
+    /***左下X****/
+    private BigDecimal leftButtomX;
 
-    /***右上*****/
-    private BigDecimal rightTop;
+    /***左下Y****/
+    private BigDecimal leftButtomY;
 
-    /***右下*****/
-    private BigDecimal rightButtom;
+    /***右上X*****/
+    private BigDecimal rightTopX;
 
-    public BigDecimal getLeftTop() {
-        return leftTop;
+    /***右上Y*****/
+    private BigDecimal rightTopY;
+
+    public BigDecimal getLeftButtomX() {
+        return leftButtomX;
     }
 
-    public void setLeftTop(BigDecimal leftTop) {
-        this.leftTop = leftTop;
+    public void setLeftButtomX(BigDecimal leftButtomX) {
+        this.leftButtomX = leftButtomX;
     }
 
-    public BigDecimal getLeftButtom() {
-        return leftButtom;
+    public BigDecimal getLeftButtomY() {
+        return leftButtomY;
     }
 
-    public void setLeftButtom(BigDecimal leftButtom) {
-        this.leftButtom = leftButtom;
+    public void setLeftButtomY(BigDecimal leftButtomY) {
+        this.leftButtomY = leftButtomY;
     }
 
-    public BigDecimal getRightTop() {
-        return rightTop;
+    public BigDecimal getRightTopX() {
+        return rightTopX;
     }
 
-    public void setRightTop(BigDecimal rightTop) {
-        this.rightTop = rightTop;
+    public void setRightTopX(BigDecimal rightTopX) {
+        this.rightTopX = rightTopX;
     }
 
-    public BigDecimal getRightButtom() {
-        return rightButtom;
+    public BigDecimal getRightTopY() {
+        return rightTopY;
     }
 
-    public void setRightButtom(BigDecimal rightButtom) {
-        this.rightButtom = rightButtom;
+    public void setRightTopY(BigDecimal rightTopY) {
+        this.rightTopY = rightTopY;
+    }
+
+    public int getPageno() {
+        return pageno;
+    }
+
+    public void setPageno(int pageno) {
+        this.pageno = pageno;
     }
 }

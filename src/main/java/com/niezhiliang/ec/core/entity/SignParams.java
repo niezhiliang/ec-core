@@ -6,11 +6,17 @@ import java.util.List;
 
 public class SignParams extends ParentParams {
 
+    /******keystore地址********/
+    private String keyStorePath;
+
+    /*******keystore密码***********/
+    private String keyStorePwd;
+
     /****待签署的pdf地址****/
-    private String pdfUrl;
+    private String pdfPath;
 
     /******签章图片地址*********/
-    private String imgUrl;
+    private String imgPath;
 
     /********证书别名*********/
     private String alias;
@@ -18,24 +24,36 @@ public class SignParams extends ParentParams {
     /*******签署坐标******/
     private List<SignPortParms> list;
 
+    /*******签署理由******/
+    private String reason;
+
+    /*******签署位置******/
+    private String location;
+
+    /****文件名称***/
+    private String fileName;
+
+    /***pdf存放的文件夹**/
+    private String pdfDir;
+
     private int certificationLevel = 0; //批准签章
 
     private PdfSignatureAppearance.RenderingMode renderingMode;//表现形式：仅描述，仅图片，图片和描述，签章者和描述
 
-    public String getPdfUrl() {
-        return pdfUrl;
+    public String getPdfPath() {
+        return this.pdfDir+this.pdfPath;
     }
 
-    public void setPdfUrl(String pdfUrl) {
-        this.pdfUrl = pdfUrl;
+    public void setPdfPath(String pdfPath) {
+        this.pdfPath = pdfPath;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+    public String getImgPath() {
+        return imgPath;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
     public String getAlias() {
@@ -68,5 +86,53 @@ public class SignParams extends ParentParams {
 
     public void setRenderingMode(PdfSignatureAppearance.RenderingMode renderingMode) {
         this.renderingMode = renderingMode;
+    }
+
+    public String getKeyStorePath() {
+        return keyStorePath;
+    }
+
+    public void setKeyStorePath(String keyStorePath) {
+        this.keyStorePath = keyStorePath;
+    }
+
+    public String getKeyStorePwd() {
+        return keyStorePwd;
+    }
+
+    public void setKeyStorePwd(String keyStorePwd) {
+        this.keyStorePwd = keyStorePwd;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getPdfDir() {
+        return pdfDir;
+    }
+
+    public void setPdfDir(String pdfDir) {
+        this.pdfDir = pdfDir;
     }
 }

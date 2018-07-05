@@ -20,10 +20,10 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Component
-public class GenerateCertStrategy implements Behave<CertParams,KestoreReturn>{
+public class GenerateCertStrategy implements Behave<CertParams>{
 
     @Override
-    public KestoreReturn doSomeJob(CertParams certParams) {
+    public void doSomeJob(CertParams certParams) {
 
         try {
         KeyStoreAdapter keyStoreAdapter = KeyTools.keyStoreFrom(Resource.from(certParams.getKeyStorePath()) , certParams.getKeyStorePassword());
@@ -45,7 +45,6 @@ public class GenerateCertStrategy implements Behave<CertParams,KestoreReturn>{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
     }
 
     /**
