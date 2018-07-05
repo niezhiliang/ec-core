@@ -1,6 +1,7 @@
-package com.niezhiliang.ec.core.entity;
+package com.niezhiliang.ec.core.domain;
 
-public class KestoreParams extends ParentParams {
+public class KeyStorePattern {
+
     private String keyStoreName;
 
     private String keyStorePd;
@@ -101,5 +102,20 @@ public class KestoreParams extends ParentParams {
 
     public void setFcPassword(String fcPassword) {
         this.fcPassword = fcPassword;
+    }
+
+    public KeyStorePattern(String keyStoreName, String keyStorePd, Integer keyLength, String fcName, String fcProvince, String fcCity, String fcCountry, String fcAlias, String fcPassword) {
+        this.keyStoreName = keyStoreName;
+        this.keyStorePd = keyStorePd;
+        this.keyLength = keyLength;
+        this.fcName = fcName;
+        this.fcProvince = fcProvince;
+        this.fcCity = fcCity;
+        this.fcCountry = fcCountry;
+        this.fcAlias = fcAlias;
+        this.fcPassword = fcPassword;
+    }
+
+    public KeyStorePattern() {
     }
 }

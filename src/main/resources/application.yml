@@ -1,0 +1,6 @@
+server:
+  port: 8080
+
+
+ks:
+  path: /Users/huluwa110/Desktop/ec-core/kestore/
