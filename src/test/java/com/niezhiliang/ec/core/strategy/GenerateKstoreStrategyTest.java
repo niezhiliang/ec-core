@@ -23,6 +23,10 @@ public class GenerateKstoreStrategyTest {
 
     @Value("${ks.path}")
     private String keyStorePath;
+    @Value("${ks.pdf}")
+    private String pdfPath;
+    @Value("${ks.img}")
+    private String imgPath;
 
     /**
      * 生成keystore文件

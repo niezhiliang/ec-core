@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SignStrategy implements Behave<SignParams> {
+
     @Override
     public void doSomeJob(SignParams signParams) {
 

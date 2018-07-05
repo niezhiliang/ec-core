@@ -3,4 +3,8 @@ server:
 
 
 ks:
-  path: /Users/huluwa110/Desktop/ec-core/kestore/
+  path: ../../../../../../kestore/
+  pdf:  ../../../../../../tmp/test.pdf
+  img:  ../../../../../../tmp/pic.jpeg
+
+
