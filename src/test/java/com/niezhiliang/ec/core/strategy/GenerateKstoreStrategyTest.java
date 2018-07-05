@@ -1,7 +1,7 @@
 package com.niezhiliang.ec.core.strategy;
 
 import com.niezhiliang.ec.core.Application;
-import com.niezhiliang.ec.core.context.EcContext;
+import com.niezhiliang.ec.core.context.EcExecute;
 import com.niezhiliang.ec.core.entity.CertParams;
 import com.niezhiliang.ec.core.entity.KestoreParams;
 import org.junit.Test;
@@ -39,8 +39,8 @@ public class GenerateKstoreStrategyTest {
         kestoreParams.setFcAlias("first-certificate");
         kestoreParams.setFcPassword("123456");
 
-        EcContext ecContext = new EcContext(generateKstoreStrategy);
-        ecContext.doJob(kestoreParams);
+        EcExecute ecExecute = new EcExecute(generateKstoreStrategy);
+        ecExecute.doJob(kestoreParams);
 
     }
 
@@ -49,7 +49,7 @@ public class GenerateKstoreStrategyTest {
      */
     @Test
     public void generateCert() {
-        EcContext ecContext = new EcContext(generateCertStrategy);
+        EcExecute ecExecute = new EcExecute(generateCertStrategy);
         CertParams certParams = new CertParams();
         certParams.setKeyStorePath(keyStorePath+"demo.ks");
         certParams.setKeyLength(2048);
@@ -61,6 +61,6 @@ public class GenerateKstoreStrategyTest {
         certParams.setRealName("苏苏苏");
         certParams.setKeyStorePassword("123456");
 
-        ecContext.doJob(certParams);
+        ecExecute.doJob(certParams);
     }
 }
