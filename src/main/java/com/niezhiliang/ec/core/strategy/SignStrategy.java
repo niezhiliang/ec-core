@@ -20,7 +20,7 @@ import java.security.cert.Certificate;
 
 @Component
 public class SignStrategy implements Behave<SignParams> {
-    final static File RESULT_FOLDER = new File("/Users/huluwa110/Desktop/ec-core/src/test/tmp", "signservice");
+    final static File RESULT_FOLDER = new File("/Users/suyu/Desktop/ec-core/src/test/tmp", "signservice");
 
     @Override
     public void doSomeJob(SignParams signParams) {
