@@ -3,9 +3,9 @@ server:
 
 
 ks:
-  path: /Users/suyu/Desktop/ec-core/src/test/kestore/
-  pdfdir: /Users/suyu/Desktop/ec-core/src/test/tmp/
+  path: /Users/huluwa110/Desktop/ec-core/src/main/resources/kestore/
+  pdfdir: /Users/huluwa110/Desktop/ec-core/src/main/resources/tmp/
   pdf:  test.pdf
-  img:  /Users/suyu/Desktop/ec-core/src/test/tmp/pic.jpeg
+  img:  /Users/huluwa110/Desktop/ec-core/src/main/resources/tmp/pic.jpeg
 
 
