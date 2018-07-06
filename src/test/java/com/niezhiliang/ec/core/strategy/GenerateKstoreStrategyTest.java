@@ -73,7 +73,7 @@ public class GenerateKstoreStrategyTest {
         CertParams certParams = new CertParams();
         certParams.setKeyStorePath(keyStorePath+"demo.ks");
         certParams.setKeyLength(2048);
-        certParams.setAlias("362202199509052515");
+        certParams.setAlias("36220219950905251520");
         certParams.setCerPassword("123456");
         certParams.setCity("杭州");
         certParams.setProvince("浙江");
@@ -87,7 +87,7 @@ public class GenerateKstoreStrategyTest {
     @Test
     public void sign() {
         SignParams signParams = new SignParams();
-        signParams.setAlias("2037088e9d844f9d02c2832b368ba949c1f07eee");
+        signParams.setAlias("057af61e737e263a9e958a255dd77f05310bfd6c");
         signParams.setPdfDir(pdfdir);
         signParams.setImgPath(imgPath);
         signParams.setReason("正常签署");
