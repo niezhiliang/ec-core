@@ -1,13 +1,12 @@
 package com.niezhiliang.ec.core.strategy;
 
+
 import com.niezhiliang.ec.core.Application;
 import com.niezhiliang.ec.core.context.EcExecute;
 import com.niezhiliang.ec.core.entity.CertParams;
 import com.niezhiliang.ec.core.entity.KestoreParams;
 import com.niezhiliang.ec.core.entity.SignParams;
 import com.niezhiliang.ec.core.entity.SignPortParms;
-import com.niezhiliang.ec.core.test.Sign2;
-import com.niezhiliang.ec.core.test.SignInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,12 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.security.GeneralSecurityException;
+import java.security.PrivateKey;
+import java.security.cert.Certificate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,7 +96,7 @@ public class GenerateKstoreStrategyTest {
         signParams.setKeyStorePwd("123456");
         List<SignPortParms> list = new ArrayList<SignPortParms>();
         SignPortParms signPortParms = new SignPortParms();
-        signPortParms.setPageno(0);
+        signPortParms.setPageno(1);
         signPortParms.setLeftButtomX(new BigDecimal(60));
         signPortParms.setLeftButtomY(new BigDecimal(60));
         signPortParms.setRightTopX(new BigDecimal(85));
@@ -105,6 +109,5 @@ public class GenerateKstoreStrategyTest {
         ecExecute.doJob(signParams);
 
     }
-
 
 }
